@@ -1,18 +1,21 @@
 apply plugin: 'com.android.application'
 
 dependencies {
-  compile project(':expandicon')
-  compile 'com.android.support:appcompat-v7:25.0.1'
+    compile project(':expandicon')
+    compile "com.android.support:appcompat-v7:$supportLibVersion"
 }
 
 android {
-  compileSdkVersion 25
-  buildToolsVersion "25.0.2"
-  defaultConfig {
-    applicationId "com.github.zagum.expandiconview"
-    minSdkVersion 16
-    targetSdkVersion 25
-    versionCode 1
-    versionName "1.0"
-  }
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.github.zagum.expandicon.sample"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 1
+        versionName "1.0"
+
+        vectorDrawables.useSupportLibrary = true
+    }
 }
